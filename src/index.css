@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Quesha Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Quesha Regular'), url('Quesha.woff') format('woff');
+}
+
+body {
+  background-image: url(https://images.unsplash.com/photo-1609581321511-9dd37bf7f985?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80);
+  background-size: cover;
+  margin: 0;
+  font-family: 'Quesha Regular',
+  'Fira Sans',
+  'Droid Sans',
+  'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
