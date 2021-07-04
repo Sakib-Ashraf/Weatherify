@@ -36,7 +36,7 @@ class App extends Component {
   loadValue = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        fetch(`http://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=adc1c7a24d6351f21a17bec409439ddf&units=metric`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=adc1c7a24d6351f21a17bec409439ddf&units=metric`)
           .then(response => {
             return response.json();
           })
