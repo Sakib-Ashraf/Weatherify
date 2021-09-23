@@ -2,7 +2,7 @@
   "name": "weatherify",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sakib-ashraf.github.io/Weatherify",
+  "homepage": "https:/weatherify.ml",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
