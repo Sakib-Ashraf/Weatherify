@@ -36,43 +36,45 @@ class App extends Component {
   loadValue = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=adc1c7a24d6351f21a17bec409439ddf&units=metric`)
-          .then(response => {
-            return response.json();
-          })
-          .then(weather => {
-            this.setState({
-              CWeatherIcon: weather.current.weather[0].icon,
-              CWeatherMain: weather.current.weather[0].main,
-              CWeatherDescription: weather.current.weather[0].description,
-              CWeatherTemp: weather.current.temp,
-              CWeatherVisibility: weather.current.visibility / 1000,
-              CWeatherFeel: weather.current.feels_like,
-              CWeatherPressure: weather.current.pressure,
-              CWeatherHumidity: weather.current.humidity,
-              CWeatherClouds: weather.current.clouds,
-              CWeatherUVI: weather.current.uvi,
-              CWeatherDew: weather.current.dew_point,
-              CWeatherWind: weather.current.wind_speed,
-              CWeatherWindDeg: weather.current.wind_deg,
-              CWeatherWindGust: weather.current.wind_gust,
-              LastUpdate: weather.current.dt,
-              CTimezone: weather.timezone_offset / 3600,
-              CLocation: weather.timezone,
-              CDaySunrise: weather.current.sunrise,
-              CDaySunset: weather.current.sunset,
-              Next7Days: weather.daily,
-            });
-            if (weather.current.rain === undefined) {
-              this.setState({
-                CWeatherRain: "0.00",
-              });
-            } else {
-              this.setState({
-                CWeatherRain: Object.values(weather.current.rain)[0],
-              });
-            }
-          });
+        fetch(
+			`https://pacific-gorge-78602.herokuapp.com/http://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=adc1c7a24d6351f21a17bec409439ddf&units=metric`
+		)
+			.then((response) => {
+				return response.json();
+			})
+			.then((weather) => {
+				this.setState({
+					CWeatherIcon: weather.current.weather[0].icon,
+					CWeatherMain: weather.current.weather[0].main,
+					CWeatherDescription: weather.current.weather[0].description,
+					CWeatherTemp: weather.current.temp,
+					CWeatherVisibility: weather.current.visibility / 1000,
+					CWeatherFeel: weather.current.feels_like,
+					CWeatherPressure: weather.current.pressure,
+					CWeatherHumidity: weather.current.humidity,
+					CWeatherClouds: weather.current.clouds,
+					CWeatherUVI: weather.current.uvi,
+					CWeatherDew: weather.current.dew_point,
+					CWeatherWind: weather.current.wind_speed,
+					CWeatherWindDeg: weather.current.wind_deg,
+					CWeatherWindGust: weather.current.wind_gust,
+					LastUpdate: weather.current.dt,
+					CTimezone: weather.timezone_offset / 3600,
+					CLocation: weather.timezone,
+					CDaySunrise: weather.current.sunrise,
+					CDaySunset: weather.current.sunset,
+					Next7Days: weather.daily,
+				});
+				if (weather.current.rain === undefined) {
+					this.setState({
+						CWeatherRain: '0.00',
+					});
+				} else {
+					this.setState({
+						CWeatherRain: Object.values(weather.current.rain)[0],
+					});
+				}
+			});
       });
     } else {
       alert("Geolocation is not supported by this browser.");
