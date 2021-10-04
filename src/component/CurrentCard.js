@@ -14,7 +14,7 @@ const CurrentCard = ({weather, func, converter}) => {
 				<div className='main tc fl w-100 w-third-ns pa2'>
 					<img
 						className='Ccardimg'
-						src={`https://pacific-gorge-78602.herokuapp.com/http://openweathermap.org/img/wn/${weather.CWeatherIcon}@2x.png`}
+						src={`http://openweathermap.org/img/wn/${weather.CWeatherIcon}@2x.png`}
 						alt='weather_icon'
 					/>
 					<h2 className='sub-text tc'>
